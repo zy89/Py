@@ -56,3 +56,38 @@ def fact(n):
         return 1
     return n * fact(n - 1)
 print fact(5)
+
+#6.定义默认参数; 
+'''
+由于函数的参数按从左到右的顺序匹配，所以默认参数只能定义在必需参数的后面:
+def fn1(a, b=1, c=2):可以  def fn2(a=1, b):不行
+
+定义x的n次方的函数：
+def power(x, n):
+    s = 1
+    while n > 0:
+        n = n - 1
+        s = s * x
+    return s
+    调用power需要传两个参数，如果就需要算平方，可以这样写：
+'''
+def power(x, n=2):
+    s = 1
+    while n > 0:
+        n = n - 1
+        s = s * x
+    return s
+print power(5)  
+
+#7.定义可变参数：加*
+def average(*args):
+    sum = 0.0
+    if len(args) == 0:
+        return sum
+    for x in args:
+        sum = sum + x
+    return sum / len(args)
+
+print average()
+print average(1, 2)
+print average(1, 2, 2, 3, 4)

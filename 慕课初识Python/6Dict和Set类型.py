@@ -36,3 +36,21 @@ print d.get('Paul') #None
 # 特点2：dict是无序的。特点3：key不可变，value无所谓
 
 #4.更新dict
+d = {
+    'Adam': 95,
+    'Lisa': 85,
+    'Bart': 59
+}
+d['Paul'] = 72 #加入新元素
+print d
+d['Bart'] = 60 #如果key已经存在，则替换原来的value
+print d 
+
+#5 遍历dict
+d = {
+    'Adam': 95,
+    'Lisa': 85,
+    'Bart': 59
+}
+for name in d:
+    print name +":",d[name] 

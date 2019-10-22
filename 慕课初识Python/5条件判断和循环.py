@@ -63,3 +63,9 @@ while True:
         continue
     sum=sum+x
 print sum
+
+#8 多重循环：打印出100以内所有十位数小于个位数的数
+for x in [ 1,2,3,4,5,6,7,8,9 ]:
+    for y in [ 1,2,3,4,5,6,7,8,9 ]:
+        if x<y:
+            print x*10 + y

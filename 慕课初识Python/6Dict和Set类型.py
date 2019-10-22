@@ -46,7 +46,7 @@ print d
 d['Bart'] = 60 #如果key已经存在，则替换原来的value
 print d 
 
-#5 遍历dict
+#5.遍历dict
 d = {
     'Adam': 95,
     'Lisa': 85,
@@ -54,3 +54,41 @@ d = {
 }
 for name in d:
     print name +":",d[name] 
+
+#6.set是一个无序不重复的数组。如果有重复元素则会自动去重
+#声明方法是set([])
+s = set(['A', 'B', 'C', 'C']) #只会有一个C，len也是3
+print s
+
+#7.访问set
+s = set(['adam','bart']) #由于是无序所以没有index，只能用in访问
+print 'Adam' in s #false，大小写敏感
+print 'bart' in s
+
+#8.set特点：1.访问速度快 2.元素不能变 3.无序;因此可以用来快速判断一些东西
+weekdays = set(['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'])
+x = 'Feb' # 用户输入的字符串
+if x in weekdays:
+    print 'input ok'
+else:
+    print 'input error'
+
+#9.遍历set；用for
+s = set([('Adam', 95), ('Lisa', 85), ('Bart', 59)])
+for x in s:
+    print x[0]+":",x[1]
+
+#10 更新set；就是remove或者add元素
+'''
+如果已经有了，则add完不会报错但是也不会加进去。
+remove如果没有的元素则会报错
+'''
+#对于s，如果list里面有的名字就删掉。没有的名字就加入
+s = set(['Adam', 'Lisa', 'Paul'])
+L = ['Adam', 'Lisa', 'Bart', 'Paul']
+for name in L:
+    if name in s:
+        s.remove(name)
+    else:
+        s.add(name)
+print s
